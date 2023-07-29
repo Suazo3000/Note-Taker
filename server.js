@@ -1,6 +1,6 @@
 const express = require('express');
-const html_routes = require('./routes')
-const api_routes = require('./routes/')
+const index_routes = require('./routes/index')
+const notes_routes = require('./routes/notes')
 const PORT = process.env.PORT || 3001;
 // dynamically set the port
 const app = express();
@@ -9,9 +9,9 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
-app.use(html_routes)
-app.use(api_routes)
+app.use(index_routes)
+app.use(notes_routes)
 
 app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Server is running on http://localhost:${PORT}`);
 });
