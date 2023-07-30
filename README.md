@@ -3,7 +3,7 @@ Git Hub URL:
 https://github.com/Suazo3000/Note-Taker
 
 Deployed Link:
-
+https://note-taker-app-heroku-suazo-4be650b6bece.herokuapp.com/
 
 
 ## Description
