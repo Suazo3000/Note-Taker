@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { v4: uuidv4 } = require('uuid');
 const fs = require ("fs");
 
-// Defines the get request to this routes end point '/api/notes'
+// the route gets all the notes from the db file
 router.get('/api/notes', async (req, res) => {
   const dbJson = await JSON.parse(fs.readFileSync("db/db.json","utf8"));
   res.json(dbJson);
@@ -21,7 +21,7 @@ router.post('/api/notes', (req, res) => {
   res.json(dbJson);
 });
 
-
+// this handles the delete function and removes it from db
 router.delete('/api/notes/:id', (req, res) => {
   let data = fs.readFileSync("db/db.json", "utf8");
   const dataJSON =  JSON.parse(data);
